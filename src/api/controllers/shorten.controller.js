@@ -26,7 +26,7 @@ router.post('/url', async (req, res, next) => {
       url, shortURL, createdAt: Date.now(), clicks: 0
     });
 
-    res.json({ status: 200, shortURL: urlEntry.short URL });
+    res.json({ status: 200, shortURL: urlEntry.shortURL });
   } catch (error) {
     if (error.message === 'url must be a valid URL') {
       res.statusCode = 400;
