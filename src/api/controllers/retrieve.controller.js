@@ -15,7 +15,9 @@ router.get('/:id', async (req, res, next) => {
     if (response) {
       urls.findOneAndUpdate({ shortURL: response.shortURL },
         { $set: { clicks: response.clicks + 1 } });
-      return res.redirect(response.url);
+      return res.json({
+        url: response.url
+      });
     }
     next();
   } catch (err) {
